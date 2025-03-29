@@ -15,12 +15,13 @@ class App extends Component {
 
     fetchQuotes = () => {
         axios
-            .get("http://localhost:8000/wel/")
+            .get("http://127.0.0.1:8000/api/quotes/")  // Updated API route
             .then((res) => {
                 this.setState({ details: res.data });
             })
             .catch((err) => console.error("Error fetching data:", err));
     };
+    
 
     renderSwitch = (param) => {
         const colors = ["primary", "secondary", "success", "danger", "warning", "info"];
